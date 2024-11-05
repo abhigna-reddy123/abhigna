@@ -1,0 +1,28 @@
+
+.btns {
+    display: flex;
+    column-gap: 2em;
+    background-color: whitesmoke;
+}
+
+
+.btn {
+    background-color: black;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: 
+        scale 0.25s ease-in,
+        opacity 0.25s ease-in,
+        filter 0.25s ease-in;
+}
+
+
+.btn:hover {
+    scale: 1.2;
+}
+
+.btns:has(.btn:hover) .btn:not(:hover) {
+    scale: 0.8;
+    opacity: 0.8;
+    filter: blur(4px);
+}

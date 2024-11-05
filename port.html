@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="button.css" rel="stylesheet">
+   
+</head>
+<body>
+
+    <center>
+        <div class="btns">
+            <button class="btn" onmouseover="showContent('summary')">Summary</button>
+            <button class="btn" onmouseover="showContent('contact')">Contact</button>
+            <button class="btn" onmouseover="showContent('education')">Education</button>
+            <button class="btn" onmouseover="showContent('project')">Project</button>
+            <button class="btn" onmouseover="showContent('achievements')">Achievements</button>
+            <button class="btn" onmouseover="showContent('hobbies')">Hobbies</button>
+        </div>
+    </center>
+
+    <!-- Content sections -->
+    <div id="summary" class="content-section">
+        <h2>Summary</h2>
+        <p>Hello! I'm a passionate developer with experience in Java full-stack development and machine learning. Currently in my 3rd year of B.Tech, I am working on a project called 'Gender Responsive Mechanism' using Java and Spring Boot.</p>
+    </div>
+    
+    <div id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>Email: example@example.com <br> Phone: +1234567890</p>
+    </div>
+    
+    <div id="education" class="content-section">
+        <h2>Education</h2>
+        <p>B.Tech in Computer Science - XYZ University (2023-2026)</p>
+    </div>
+    
+    <div id="project" class="content-section">
+        <h2>Projects</h2>
+        <p>Working on a project titled 'Gender Responsive Mechanism' to address gender-specific needs using Java and Spring Boot.</p>
+    </div>
+    
+    <div id="achievements" class="content-section">
+        <h2>Achievements</h2>
+        <p>National Rank 38 in IEO, District Rank 1 in NSO.</p>
+    </div>
+    
+    <div id="hobbies" class="content-section">
+        <h2>Hobbies</h2>
+        <p>Coding, Reading, Traveling, and Music.</p>
+    </div>
+
+    <script>
+        // Function to show content based on hovered button
+        function showContent(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            // Show the hovered section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+    
+</body>
+</html>
