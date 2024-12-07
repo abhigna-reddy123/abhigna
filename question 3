@@ -1,0 +1,9 @@
+@Controller
+public class InfoController {
+    @RequestMapping("/showInfo")
+    public String showInfo(@RequestParam("id") int id, @RequestParam("name") String name, Model model) {
+        model.addAttribute("id", id);
+        model.addAttribute("name", name);
+        return "info";
+    }
+}
