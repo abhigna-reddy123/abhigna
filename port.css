@@ -1,28 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation Result</title>
+</head>
+<body>
+    <h1>Calculation Results</h1>
 
-.btns {
-    display: flex;
-    column-gap: 2em;
-    background-color: whitesmoke;
-}
+    <%
+        // Retrieve parameters from the URL
+        String num1Param = request.getParameter("num1");
+        String num2Param = request.getParameter("num2");
 
+        // Check if parameters are present and valid
+        if (num1Param != null && num2Param != null) {
+            try {
+                // Parse the numbers
+                double num1 = Double.parseDouble(num1Param);
+                double num2 = Double.parseDouble(num2Param);
 
-.btn {
-    background-color: black;
-    color: whitesmoke;
-    cursor: pointer;
-    transition: 
-        scale 0.25s ease-in,
-        opacity 0.25s ease-in,
-        filter 0.25s ease-in;
-}
+                // Perform calculations
+                double sum = num1 + num2;
+                double product = num1 * num2;
 
-
-.btn:hover {
-    scale: 1.2;
-}
-
-.btns:has(.btn:hover) .btn:not(:hover) {
-    scale: 0.8;
-    opacity: 0.8;
-    filter: blur(4px);
-}
+                // Display results
+    %>
+                <p>Number 1: <%= num1 %></p>
+                <p>Number 2: <%= num2 %></p>
+                <p>Sum: <%= sum %></p>
+                <p>Product: <%= product %></p>
+    <%
+            } catch (NumberFormatException e) {
+                // Handle invalid input
+    %>
+                <p style="color: red;">Error: Please provide valid numeric values for both parameters.</p>
+    <%
+            }
+        } else {
+    %>
+        <p style="color: red;">Error: Missing parameters. Please provide `num1` and `num2` in the URL.</p>
+        <p>Example: <code>?num1=5&num2=10</code></p>
+    <%
+        }
+    %>
+</body>
+</html>
