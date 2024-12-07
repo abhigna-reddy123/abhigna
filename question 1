@@ -1,0 +1,8 @@
+@Controller
+public class WelcomeController {
+    @RequestMapping("/welcome")
+    public String welcome(Model model) {
+        model.addAttribute("message", "Welcome to Spring MVC!");
+        return "welcome";
+    }
+}
